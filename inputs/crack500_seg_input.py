@@ -46,12 +46,19 @@ def maybe_download_and_extract(hypes):
     """
 
     data_dir = hypes['dirs']['data_dir']
+    print("data_dir: %s" % data_dir)
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
 
     data_road_zip = os.path.join(data_dir, 'data_road.zip')
-    vgg_weights = os.path.join(data_dir, 'vgg16.npy')
-    crack500_dir = os.path.join(data_dir, 'data_CRACK500/')
+    vgg_weights = os.path.join(data_dir, 'weights/vgg16.npy')
+    crack500_dir = os.path.join(data_dir, 'data_CRACK500')
+
+    if os.path.exists(vgg_weights):
+        print("Got the vgg weights")
+
+    if os.path.exists(crack500_dir):
+        print("Got all the data")
 
     if os.path.exists(vgg_weights) and os.path.exists(crack500_dir):
         return

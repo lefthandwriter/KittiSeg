@@ -12,7 +12,7 @@
   "data": {
     "train_file" : "data_CRACK500/trainCRACK500.txt",
     "val_file" : "data_CRACK500/valCRACK500.txt",
-    "crack_color" : [255,255,255],
+    "road_color" : [255,255,255],
     "background_color" : [0,0,0],
     "vgg_url": "ftp://mi.eng.cam.ac.uk/pub/mttt2/models/vgg16.npy",
     "kitti_url": ""
