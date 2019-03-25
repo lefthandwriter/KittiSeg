@@ -22,6 +22,15 @@ import sys
 
 import collections
 
+## Delete all flags before declaring them (for Google Colab compatibility)
+## See https://github.com/tensorflow/models/issues/5360
+def del_all_flags(FLAGS):
+    flags_dict = FLAGS._flags()
+    keys_list = [keys for keys in flags_dict]
+    for keys in keys_list:
+    FLAGS.delattr(keys)
+del_all_flags(tf.flags.FLAGS)
+
 
 def dict_merge(dct, merge_dct):
     """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
