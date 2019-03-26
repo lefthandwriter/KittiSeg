@@ -105,7 +105,7 @@ def main(_):
 
     # maybe_download_and_extract(runs_dir)
     # logging.info("Evaluating on Validation data.")
-    # logdir = os.path.join(runs_dir, FLAGS.RUN)
+    logdir = os.path.join(runs_dir, FLAGS.RUN)
     # logging.info("Output images will be saved to {}".format)
     # ana.do_analyze(logdir)
 
