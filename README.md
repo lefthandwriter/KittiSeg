@@ -1,3 +1,46 @@
+## Modifications
+
+Esther Ling
+
+### Overview
+
+- Changed input files for training a road crack segmentation dataset
+
+- CRACK500 dataset (https://github.com/fyangneil/pavement-crack-detection)
+
+- Added scripts for evaluating on test data
+
+### Tutorial
+
+To train:
+
+`python train_crack.py --hypes hypes/CRACK500.json --project crack500 --name no_augs`
+
+To evaluate (with metrics) on validation set:
+
+`python evaluate.py --hypes hypes/CRACK500.json --RUN /path/to/model/`
+
+To run inference on test set and save results:
+
+`python inference_test.py --hypes hypes/CRACK500.json --RUN /path/to/model/`
+
+To get metrics from saved test images:
+
+`python get_metrics.py --test /path/to/results/ --gt /path/to/ground/truth/`
+
+
+### Notes for training on Google Colab
+
+1. Upload the training, validation and test data, weights to a Google Drive account.
+
+2. Mount the Google Drive folder in Colab.
+
+3. Set 'TV_DIR_DATA' and 'TV_DIR_RUNS' to the mounted gdrive - this avoids the hassle of uploading data and downloading results to / from Colab.
+
+
+
+***************** Original KittiSeg README below ***************
+
 # KittiSeg
 
 KittiSeg performs segmentation of roads by utilizing an FCN based model. The model achieved [first place](http://www.cvlibs.net/datasets/kitti/eval_road_detail.php?result=ca96b8137feb7a636f3d774c408b1243d8a6e0df) on the Kitti Road Detection Benchmark at submission time. Check out our [paper](https://arxiv.org/abs/1612.07695) for a detailed model description.

@@ -103,14 +103,14 @@ def main(_):
 
     train.maybe_download_and_extract(hypes)
 
-    maybe_download_and_extract(runs_dir)
-    logging.info("Evaluating on Validation data.")
+    # maybe_download_and_extract(runs_dir)
+    # logging.info("Evaluating on Validation data.")
     logdir = os.path.join(runs_dir, FLAGS.RUN)
-    logging.info("Output images will be saved to {}".format)
-    ana.do_analyze(logdir)
+    # logging.info("Output images will be saved to {}".format)
+    # ana.do_analyze(logdir)
 
-    # logging.info("Creating output on test data.")
-    # kitti_test.do_inference(logdir)
+    logging.info("Creating output on test data.")
+    kitti_test.do_inference(logdir)
 
     logging.info("Analysis for pretrained model complete.")
     logging.info("For evaluating your own models I recommend using:"
